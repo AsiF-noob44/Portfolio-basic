@@ -1,0 +1,801 @@
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: normal;
+  color: white;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #222;
+  min-height: 100vh;
+  margin: 0;
+}
+/* NAV SECTION */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(34, 34, 34, 0.25);
+  backdrop-filter: blur(10px);
+  border-bottom: solid 2px #333;
+  z-index: 1000;
+}
+.navbar-container {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+.nav-left {
+  display: flex;
+}
+.logo {
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+.nav-name {
+  font-size: 30px;
+  letter-spacing: 0.2rem;
+  line-height: 1.5rem;
+  font-family: "Sofadi One", system-ui;
+  font-weight: 1000;
+  font-variant: small-caps;
+  font-style: italic;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.5s ease;
+}
+.nav-name:hover {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-right-container {
+  margin-left: auto;
+}
+.nav-items-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-items {
+  margin: 1rem;
+  list-style: none;
+}
+.nav-items-links {
+  text-decoration: none;
+  position: relative;
+  color: #dcdcdc;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+.nav-items-links:hover {
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid #00f260;
+}
+@media only screen and (max-width: 873px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+    display: block;
+  }
+  .nav-items-container {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .navbar {
+    background-color: rgba(34, 34, 34, 1);
+  }
+}
+
+/* CONTAINER */
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+/* HERO SECTION */
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 15px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+/* Hover effect */
+.hero-image:hover {
+  transform: scale(1.05);
+  border-color: #cfcfcfe3;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+.hero-left,
+.hero-right {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .hero-left {
+    width: 40%;
+  }
+  .hero-right {
+    width: 60%;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 1000;
+  font-variant: small-caps;
+  font-style: italic;
+  letter-spacing: 0.5rem;
+}
+.description {
+  padding: 0 1rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  text-align: justify;
+  font-weight: 100;
+}
+
+/* RESUME SECTION */
+
+.resume-container {
+  margin-top: 1rem;
+}
+.resume-sub-container {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+   */
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+}
+.subtitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #c9c9c9;
+  margin-bottom: 0.5rem;
+  position: relative;
+  text-align: left;
+}
+
+/* Line styling */
+.line {
+  width: 140px;
+  height: 3px;
+  background-color: #333;
+  margin: 0.5rem 0 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner-line {
+  width: 100px;
+  height: 3px;
+  background-color: #00f260;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: slide-in 1s ease forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    width: 60px;
+  }
+}
+
+/* Hover effect for .subtitle */
+.subtitle:hover {
+  color: #00f260;
+  transition: color 0.4s ease;
+}
+
+.resume-list {
+  /* position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  border-left: 3px solid rgba(255, 255, 255, 0.6);
+  transition: border-color 0.4s ease;
+  position: relative;
+}
+.resume-list:hover {
+  border-left: 3px solid rgba(255, 255, 255, 1);
+}
+.resume-duration-container {
+  display: flex;
+  align-items: center;
+  padding-left: 1.7rem;
+}
+.round-div {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background-color: whitesmoke;
+  position: absolute;
+  left: -14px;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+.round-div:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 1); 
+}
+.resume-duration {
+  background-color: black;
+  width: auto;
+  border-radius: 1.5rem;
+  margin: 1rem 0;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+.resume-duration:hover {
+  background-color: #ebe4e4;
+  color: black;
+  transition: 0.3s;
+}
+.resume-description {
+  font-family: "Arial", sans-serif;
+  padding: 15px;
+  text-align: center;
+}
+
+.resume-company {
+  font-size: 21px;
+  font-weight: 600;
+  color: #f5f5f5; 
+  margin-bottom: 7px;
+  padding-bottom: 5px;
+}
+
+.resume-designation {
+  font-size: 15px;
+  font-weight: 400;
+  color: #d3d3d3; 
+  margin-top: 0;
+}
+.round-div-education {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background-color: whitesmoke;
+  position: absolute;
+  left: -14px;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+.round-div-education:hover {
+  background-color: rgba(255, 255, 255, 0.7); 
+  border-color: rgba(255, 255, 255, 1);
+}
+.resume-image,
+.education-image {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 40px;
+  border: 3px solid rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.resume-image:hover,
+.education-image:hover {
+  transform: scale(1.05); 
+  border-color: #979696; 
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.2);
+}
+
+/* Certificate */
+.certifactes-container > .subtitle-container {
+  margin-top: 10rem;
+}
+
+.subtitle-container > .subtitle,
+.subtitle-container > .line {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.certificates-sub-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+.certification-list {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border: 2px solid #444;
+  border-radius: 0.375rem;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 1rem;
+  min-height: 100px;
+}
+.certification-list:hover {
+  transform: scale(1.05);
+}
+.certificate-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #444;
+  height: 3.5rem;
+  border-right: 2px solid #444;
+}
+.certificate-logo-container:hover {
+  background-color: #787878;
+}
+.certificate-name,
+.project-name {
+  color: #f5f5f5;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+.certificate-org-name,
+.certificate-date,
+.certificate-link,
+.project-link {
+  font-size: 12px;
+  line-height: 16px;
+  color: #b8b8b8;
+  margin: 8px 0;
+  text-decoration: none;
+}
+.certificate-link:hover {
+  color: #f5f5f5;
+  transition: 0.5s;
+  text-decoration: underline;
+}
+.all-certificates-link {
+  text-align: center;
+  margin-top: 2rem;
+  text-decoration: none;
+}
+.certificate-btn {
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  background-color: #333;
+  border: 1.5px solid rgb(162, 165, 164);
+  border-radius: 1.5rem;
+  cursor: pointer;
+  margin: 2rem auto;
+  display: block;
+  transition: 0.5s;
+  color: rgb(253, 249, 243);
+}
+.certificate-btn:hover {
+  background: hsl(0, 0%, 44%);
+  color: black;
+  border: 1.5px solid aquamarine;
+}
+
+/* Skills */
+.skills-container {
+  margin-top: 6rem;
+}
+.skills-sub-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+.skills-progress-container {
+  margin: 1rem 0;
+}
+.skills-progress {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skill-heading {
+  font-size: 1.3rem; 
+  font-weight: 600; 
+  color: #fff; 
+  margin-bottom: 1rem; 
+  text-transform: capitalize; 
+  background: linear-gradient(90deg, white, #4d4c4c);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  padding: 5px; 
+  border-radius: 5px; 
+  text-align: center; 
+}
+.skill {
+  font-size: 13px;
+  font-weight: 400;
+  color: #f3f3f3;
+  margin: 0;
+}
+.percentage {
+  font-size: 11px;
+  font-weight: 400;
+  margin-top: 1px;
+  color: rgb(22, 186, 334);
+}
+.progress {
+  width: 100%; /* Full width of the container */
+  height: 12px; /* Height of the progress bar */
+  border-radius: 5px; /* Rounded corners */
+  background-color: rgba(255, 255, 255, 0.1); /* Light background */
+  border: 1px solid #333; /* Border color */
+  appearance: none; /* Remove default styles */
+}
+.progress::-webkit-progress-bar {
+  background-color: rgba(255, 255, 255, 0.1); /* Background color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.progress::-webkit-progress-value {
+  background-color: #6455b9; /* Green color for filled section */
+  border-radius: 5px; /* Rounded corners */
+}
+::-webkit-scrollbar {
+  width: 12px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #333; /* Dark gray track (background of scrollbar) */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00bcd4; /* Light blue thumb (scroll handle) */
+  border-radius: 10px; /* Optional: rounded corners */
+  border: 3px solid #333; /* Adds a border to the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #008c9e; /* Darker shade of blue when hovering */
+}
+
+/* Portfolio Section */
+
+.portfolio-container {
+  margin-top: 7rem;
+}
+
+/* Container for the projects */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 equal columns */
+  gap: 5rem; /* Spacing between items */
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+/* Each project item will have an image and details stacked vertically */
+.project-item {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #333;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Adding hover effects */
+.project-item:hover {
+  transform: translateY(-10px); /* Moves the project card up by 10px on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
+  background-color: #b6b4b4;
+}
+
+/* Styling for the project image */
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease; /* Smooth image zoom */
+}
+
+/* Image hover effect */
+.project-item:hover .project-image {
+  transform: scale(1.05); /* Zooms the image slightly */
+}
+
+/* Styling for the project details */
+.project-details {
+  padding: 1rem;
+  text-align: center;
+  transition: color 0.3s ease; /* Smooth transition of text color */
+}
+.project-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #aeacac; /* Light color to contrast against black background */
+  margin-bottom: 7px;
+  padding-bottom: 5px;
+}
+
+/* Change text color on hover */
+.project-item:hover .project-name,
+.project-item:hover .project-description,
+.project-item:hover a {
+  color: #323232; /* Change the color of text and link on hover */
+}
+
+/* Styling for the project details */
+/* .project-details {
+  padding: 1rem;
+  margin: 0 auto;
+  text-align: center;
+} */
+
+/* Adjust layout for smaller screens */
+@media (max-width: 900px) {
+  .project-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .project-container {
+    grid-template-columns: 1fr; /* 1 column on mobile screens */
+  }
+}
+
+/* Contact */
+/* Parent container for the contact info and form */
+.contact-container {
+  margin-top: 13rem;
+}
+.contact-info-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Adjusting columns for left and right */
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Form grid */
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for input fields and message */
+  gap: 1rem;
+}
+
+/* Form fields (left side) */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Textarea (right side) */
+.form-message {
+  grid-column: 2; /* Ensures it sits in the right column */
+}
+/* Style for the form heading */
+.form-heading {
+  font-size: 2rem; /* Adjust the font size as needed */
+  color: #e7e7e7; /* Dark color for good contrast */
+  position: relative; /* Position relative for the after pseudo-element */
+  margin-bottom: 3rem; /* Space below the heading */
+  display: inline-block; /* Ensure the line and heading are aligned */
+  padding-bottom: 5px;
+}
+
+/* Adding an underline effect using ::after pseudo-element */
+.form-heading::after {
+  content: ""; /* Empty content for the pseudo-element */
+  display: block; /* Make it a block to sit below the heading */
+  width: 100%; /* Full width */
+  height: 4px; /* Height of the underline */
+  background: #4caf50; /* Change to your desired color */
+  position: absolute; /* Position it absolutely */
+  left: 0; /* Align to the left */
+  bottom: -5px; /* Space below the heading */
+  transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+  transform: scaleX(0); /* Initially hide the underline */
+}
+
+/* Hover effect */
+.form-heading:hover {
+  color: #3b944a; /* Change the color of the heading on hover */
+}
+.form-heading:hover::after {
+  transform: scaleX(1); /* Scale it to full width on hover */
+}
+
+/* Input field common styling */
+.input-field {
+  background-color: transparent;
+  border: 2px solid #555;
+  border-radius: 2px;
+  width: 100%; /* Make sure it fits in its container */
+  padding: 0.625rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.input-field:focus {
+  outline: none; /* Remove the default focus outline */
+}
+.contact-info-container a,
+.contact-info-container p {
+  text-decoration: none;
+  font-size: 16px;
+}
+.contact-details {
+  font-size: 16px;
+  font-weight: 400;
+  color: #f5f5f5;
+  margin-top: 2rem;
+  padding-bottom: 5px;
+  position: relative;
+  text-align: -webkit-match-parent;
+}
+
+.contact-button {
+  background: linear-gradient(
+    135deg,
+    #4caf50,
+    #81c784
+  ); /* Gradient background */
+  color: #fff; /* White text color */
+  font-size: 1.2rem; /* Increase font size */
+  padding: 12px 24px; /* Vertical and horizontal padding */
+  border: none; /* No border */
+  border-radius: 25px; /* Rounded edges */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background 0.3s ease, transform 0.2s ease; /* Smooth transitions for background and transform */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  outline: none; /* Remove outline */
+  display: inline-flex; /* Aligns items in the center */
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  margin-top: 2rem; /* Space below the button */
+}
+
+
+.contact-button:hover {
+  background: linear-gradient(
+    135deg,
+    #388e3c,
+    #66bb6a
+  ); 
+  transform: translateY(-2px); 
+}
+
+
+.contact-button:active {
+  transform: translateY(0); 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.contact-button:focus {
+  outline: 2px solid #4caf50;
+  outline-offset: 2px; 
+}
+
+
+textarea.input-field {
+  height: 100%;
+  resize: none; 
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.25rem 0.75rem;
+  background: linear-gradient(
+    135deg,
+    #282c34,
+    #3a3f47
+  ); 
+  border-top: 2px solid #333;
+  margin-top: 4rem;
+}
+
+.footer-link-container {
+  margin-bottom: 1rem;
+}
+
+
+.footer-link,
+footer span {
+  color: #d5d5d5;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  text-decoration: none;
+  margin-left: 1rem;
+  position: relative; 
+}
+
+
+.footer-link i {
+  font-size: 1.5rem; 
+  background: linear-gradient(
+    135deg,
+    #00c6ff,
+    #0072ff
+  ); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s; 
+}
+
+
+.footer-link:hover i {
+  transform: scale(1.1);
+}
+
+.footer-link:hover,
+footer span:hover {
+  color: aquamarine;
+  transition: color 0.4s;
+  cursor: pointer;
+}
+
+
+footer span {
+  font-size: 14px; 
+  color: #d5d5d5; 
+  text-align: center; 
+}
