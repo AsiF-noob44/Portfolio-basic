@@ -63,6 +63,7 @@ html {
 }
 .nav-name:hover {
   background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -85,6 +86,7 @@ html {
 }
 .nav-items-links:hover {
   background: linear-gradient(90deg, #00f260, #0575e6);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom: 2px solid #00f260;
@@ -166,6 +168,7 @@ html {
   font-weight: bold;
   color: #00f260;
   background: linear-gradient(90deg, #00f260, #0575e6);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.4rem;
@@ -174,6 +177,7 @@ html {
 
 .highlight:hover {
   background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -197,6 +201,7 @@ html {
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   background: linear-gradient(90deg, #00f260, #0575e6);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -219,6 +224,7 @@ html {
     #ffcc00,
     #ff8800
   ); /* Gold to orange gradient */
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.1rem;
@@ -227,6 +233,7 @@ html {
 
 .academic-highlight:hover {
   background: linear-gradient(90deg, #ff8800, #ffaa00);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -582,6 +589,7 @@ html {
   margin-bottom: 1rem;
   text-transform: capitalize;
   background: linear-gradient(90deg, white, #4d4c4c);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 5px;
@@ -963,6 +971,7 @@ footer span {
 .footer-link i {
   font-size: 1.5rem;
   background: linear-gradient(135deg, #00c6ff, #0072ff);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 0.3s;
