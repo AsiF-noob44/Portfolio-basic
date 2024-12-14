@@ -1,3 +1,4 @@
+/* General Styles */
 * {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -5,11 +6,26 @@
   color: white;
   scroll-behavior: smooth;
 }
+
+a {
+  cursor: pointer;
+  outline: none; /* Prevent focus outlines */
+}
+
+a:active {
+  background: none; /* Prevent unintended styling */
+}
+
 body {
   background-color: #222;
   min-height: 100vh;
   margin: 0;
 }
+
+html {
+  scroll-padding-top: 80px; /* Adjust based on your navbar height */
+}
+
 /* NAV SECTION */
 .navbar {
   position: sticky;
@@ -40,6 +56,7 @@ body {
   font-variant: small-caps;
   font-style: italic;
   background: linear-gradient(90deg, #00f260, #0575e6);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background 0.5s ease;
@@ -72,6 +89,8 @@ body {
   -webkit-text-fill-color: transparent;
   border-bottom: 2px solid #00f260;
 }
+
+/* Responsive Styles */
 @media only screen and (max-width: 873px) {
   .navbar-container {
     flex-direction: column;
@@ -88,27 +107,6 @@ body {
   }
 }
 
-/* CONTAINER */
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
 /* HERO SECTION */
 .hero-container {
   display: flex;
@@ -127,8 +125,6 @@ body {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
-
-/* Hover effect */
 .hero-image:hover {
   transform: scale(1.05);
   border-color: #cfcfcfe3;
@@ -159,16 +155,89 @@ body {
 }
 .description {
   padding: 0 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 2rem;
   text-align: justify;
   font-weight: 100;
+}
+/* Highlight Style */
+.highlight {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #00f260;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.highlight:hover {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* About Me Section */
+.about-container {
+  padding: 4rem 1.5rem;
+  background-color: #282828;
+  color: #dcdcdc;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: #00f260;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-description {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  text-align: justify;
+  margin-top: 1rem;
+  font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+/* Highlight for Academic Details */
+.academic-highlight {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffcc00; /* Gold color for text */
+  background: linear-gradient(
+    90deg,
+    #ffcc00,
+    #ff8800
+  ); /* Gold to orange gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.academic-highlight:hover {
+  background: linear-gradient(90deg, #ff8800, #ffaa00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* RESUME SECTION */
 
 .resume-container {
-  margin-top: 1rem;
+  padding: 1.5rem;
+}
+.resume-container > .title {
+  margin-top: 5.2rem;
 }
 .resume-sub-container {
   /* display: flex;
@@ -331,10 +400,39 @@ body {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
   filter: brightness(1.2);
 }
+/* CV Button */
+.cv-button-container {
+  text-align: center;
+  margin-top: 5rem;
+}
 
-/* Certificate */
-.certifactes-container > .subtitle-container {
-  margin-top: 10rem;
+.cv-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.cv-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #0575e6, #00f260);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Certificates Section */
+.certificates-container {
+  padding: 2rem;
+}
+
+.certificates-container > .subtitle-container {
+  margin-top: 8rem;
 }
 
 .subtitle-container > .subtitle,
@@ -345,65 +443,84 @@ body {
 }
 
 .certificates-sub-container {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem;
+  display: flex; /* Use flexbox for vertical stacking */
+  flex-direction: column; /* Stack items vertically */
+  gap: 2rem; /* Space between items */
   margin-top: 5rem;
   margin-bottom: 3rem;
+  align-items: center; /* Center align certificates */
 }
+
 .certification-list {
   display: flex;
-  align-items: center;
+  align-items: stretch; /* Stretch child elements to the full height */
   gap: 1.25rem;
   border: 2px solid #444;
   border-radius: 0.375rem;
   transition: transform 0.3s ease-in-out;
-  margin-top: 1rem;
-  min-height: 100px;
+  padding: 0; /* Remove padding for a clean layout */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Optional: Limit max width for better visuals */
+  min-height: 100px; /* Minimum height to ensure consistency */
 }
+
 .certification-list:hover {
   transform: scale(1.05);
 }
+
 .certificate-logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  width: 100px; /* Fixed width for the logo area */
   background-color: #444;
-  height: 3.5rem;
   border-right: 2px solid #444;
 }
+
+.certificate-logo-container img {
+  width: 80%; /* Ensure the logo scales well within its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
 .certificate-logo-container:hover {
   background-color: #787878;
 }
-.certificate-name,
-.project-name {
+
+.certificate-description {
+  flex: 1; /* Make the description take the remaining space */
+  padding: 1rem; /* Add padding for better spacing */
+}
+
+.certificate-name {
   color: #f5f5f5;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   margin: 0;
 }
+
 .certificate-org-name,
 .certificate-date,
-.certificate-link,
-.project-link {
+.certificate-link {
   font-size: 12px;
   line-height: 16px;
   color: #b8b8b8;
   margin: 8px 0;
   text-decoration: none;
 }
+
 .certificate-link:hover {
   color: #f5f5f5;
   transition: 0.5s;
   text-decoration: underline;
 }
+
 .all-certificates-link {
   text-align: center;
   margin-top: 2rem;
   text-decoration: none;
 }
+
 .certificate-btn {
   text-decoration: none;
   padding: 1rem 1.5rem;
@@ -416,15 +533,32 @@ body {
   transition: 0.5s;
   color: rgb(253, 249, 243);
 }
+
 .certificate-btn:hover {
   background: hsl(0, 0%, 44%);
   color: black;
   border: 1.5px solid aquamarine;
 }
 
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .certification-list {
+    flex-direction: column; /* Stack logo and details vertically */
+    text-align: center;
+  }
+
+  .certificate-logo-container {
+    width: 100%; /* Full width for the logo area on small screens */
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid #444;
+  }
+}
+
 /* Skills */
 .skills-container {
   margin-top: 6rem;
+  padding: 2rem;
 }
 .skills-sub-container {
   display: grid;
@@ -501,17 +635,42 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #008c9e; /* Darker shade of blue when hovering */
 }
+.skills-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-point {
+  font-size: 15px; /* Slightly larger font */
+  color: #f3f3f3;
+  margin: 0.75rem 0; /* Larger gap between points */
+  line-height: 1.8;
+  padding-left: 20px; /* Add space between bullet and text */
+  position: relative;
+}
+
+.skill-point::before {
+  content: "⮞"; /* A better symbol for the bullet */
+  color: #6455b9; /* Accent color */
+  font-size: 18px; /* Larger bullet icon */
+  position: absolute;
+  left: 0; /* Position at the start */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+}
 
 /* Portfolio Section */
 
 .portfolio-container {
   margin-top: 7rem;
+  padding: 2rem;
 }
 
 /* Container for the projects */
 .project-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 equal columns */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 3 equal columns */
   gap: 5rem; /* Spacing between items */
   margin-top: 5rem;
   margin-bottom: 3rem;
@@ -584,6 +743,52 @@ body {
   /* margin-top: 2.5rem; */
   /* margin-bottom: 2.5rem; */
 }
+
+/* Standalone View All Projects Section */
+.view-all-projects-container {
+  margin-top: 6rem;
+  text-align: center; /* Center the button */
+}
+
+.view-all-projects-link {
+  text-decoration: none; /* Remove underline */
+}
+
+.view-all-projects-btn {
+  display: inline-block;
+  font-size: 1.2rem; /* Slightly larger font */
+  font-weight: 600;
+  color: white;
+  padding: 0.8rem 2rem; /* Adjust padding for a balanced button size */
+  border: 2px solid #6455b9; /* Border to match portfolio theme */
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    #6455b9,
+    #8473d2
+  ); /* Gradient background */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+}
+
+/* Hover Effects */
+.view-all-projects-btn:hover {
+  background: linear-gradient(90deg, #8473d2, #b8aef0); /* Brighter gradient */
+  color: #333; /* Text color change */
+  transform: translateY(-5px); /* Slight upward movement */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.view-all-projects-btn i {
+  margin-left: 0.5rem; /* Spacing between text and icon */
+  transition: transform 0.3s ease; /* Icon transition */
+}
+
+.view-all-projects-btn:hover i {
+  transform: translateX(5px); /* Slide the icon to the right on hover */
+}
+
 /* Adjust layout for smaller screens */
 @media (max-width: 900px) {
   .project-container {
@@ -614,8 +819,8 @@ body {
 
 .contact-container {
   margin-top: 13rem;
+  padding: 2rem;
 }
-
 
 .form {
   display: grid;
@@ -623,13 +828,11 @@ body {
   gap: 1rem;
 }
 
-
 .form-fields {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
 
 .form-message {
   grid-column: 2; /* Ensures it sits in the right column */
@@ -643,7 +846,6 @@ body {
   padding-bottom: 5px;
 }
 
-
 .form-heading::after {
   content: ""; /* Empty content for the pseudo-element */
   display: block; /* Make it a block to sit below the heading */
@@ -656,7 +858,6 @@ body {
   transition: transform 0.3s ease; /* Smooth transition for the hover effect */
   transform: scaleX(0); /* Initially hide the underline */
 }
-
 
 .form-heading:hover {
   color: #3b944a; /* Change the color of the heading on hover */
@@ -693,11 +894,7 @@ body {
 }
 
 .contact-button {
-  background: linear-gradient(
-    135deg,
-    #4caf50,
-    #81c784
-  ); 
+  background: linear-gradient(135deg, #4caf50, #81c784);
   color: #fff; /* White text color */
   font-size: 1.2rem; /* Increase font size */
   padding: 12px 24px; /* Vertical and horizontal padding */
